@@ -1,0 +1,5 @@
+each doc in model
+  h3 = doc.title
+  p
+    = doc.description
+  link-to 'read' doc | Read
