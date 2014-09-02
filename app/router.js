@@ -6,7 +6,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('document', {path: '/'}, function () {
-    this.resource('read', {path: '/:doc_id'});
+    this.resource('document.read', {path: '/:doc_id'});
   });
 });
 

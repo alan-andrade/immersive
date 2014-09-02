@@ -1,0 +1,6 @@
+a click="read" read
+
+= activeChunk
+if isReading
+  each
+    p=text

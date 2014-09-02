@@ -1,5 +1,7 @@
-each doc in model
-  h3 = doc.title
-  p
-    = doc.description
-  link-to 'read' doc | Read
+each
+  .document.small
+    h3 = title
+    p
+      = summary
+      br
+      link-to 'document.read' this | Read
