@@ -11,11 +11,14 @@ Document.reopenClass({
     id: 1,
     title: "Discover what's an immersive read",
     summary: 'This is a tour of the possibilities you can create with immersive',
-    chunks: [1, 2]},
+    chunks: [1, 2]
+  },
   {
     id: 2,
     title: 'How to cry' ,
-    summary: 'cry cry poor baby'}]
+    summary: 'cry cry poor baby',
+    chunks: [3]
+  }]
 });
 
 export default Document;

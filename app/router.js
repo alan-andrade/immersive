@@ -5,8 +5,10 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('document', {path: '/'}, function () {
-    this.resource('document.read', {path: '/:doc_id'});
+  this.resource('documents', { path: '/' }, function () {
+    this.route('read', { path: '/:doc_id' }, function () {
+      this.route('chunk', { path: '/:chunk_id' });
+    });
   });
 });
 

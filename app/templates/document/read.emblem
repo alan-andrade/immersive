@@ -1,4 +1,0 @@
-h1 = title
-
-with chunks
-  partial 'chunk/index'

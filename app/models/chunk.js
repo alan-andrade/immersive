@@ -19,6 +19,12 @@ Chunk.reopenClass({
       document_id: 1,
       text: 'I just want to go out, please, let me go!',
       color: '#333'
+    },
+    {
+      id: 3,
+      document_id: 2,
+      text: 'Lie down, pretend not to cry, cry a lot',
+      color: '#eee'
     }]
 });
 
