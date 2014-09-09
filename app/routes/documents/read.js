@@ -7,7 +7,7 @@ export default Em.Route.extend({
     var self = this;
     model.get('chunks').then(function (c) {
       var chunk = c.get('firstObject');
-      self.transitionTo('documents.read.chunk', chunk.get('id'));
+      self.replaceWith('documents.read.chunk', chunk.get('id'));
     });
   }
 });

@@ -7,7 +7,7 @@ export default Ember.Route.extend({
         nextDoc = docs.objectAt(position+1);
 
       if (!!nextDoc) {
-        this.transitionTo('documents.read', nextDoc);
+        this.replaceWith('documents.read', nextDoc);
       }
     }
   }
