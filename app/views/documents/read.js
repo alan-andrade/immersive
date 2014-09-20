@@ -1,7 +1,9 @@
-export default Em.View.extend({
-  attributeBindings: ['style'],
+import Ember from 'ember';
 
-  style: function () {
-    return 'background-color: ' + this.controller.get('color') + ';';
-  }.property('controller.color')
+export default Ember.View.extend({
+  didInsertElement: function() {
+    this.addObserver('controller.color', function() {
+      this.$().animate({backgroundColor: this.get('controller.color')});
+    });
+  }
 });

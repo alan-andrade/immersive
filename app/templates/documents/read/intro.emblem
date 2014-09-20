@@ -1,0 +1,6 @@
+p
+  a click=readStory Read 
+  | or 
+  a click=skipStory Next Story
+
+%h1= title
