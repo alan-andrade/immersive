@@ -1,6 +1,6 @@
 p
-  a click=readStory Read 
+  a click=skipStory Next Story 
   | or 
-  a click=skipStory Next Story
+  a click=readStory Read
 
 %h1= title

@@ -6,7 +6,7 @@ export default Ember.Route.extend({
   },
 
   afterModel: function (model) {
-    this.transitionTo('documents.read.intro', model.content.get('firstObject'));
+    this.replaceWith('documents.read.intro', model.content.get('firstObject'));
   },
 
   actions: {

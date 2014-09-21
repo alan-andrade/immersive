@@ -7,10 +7,7 @@ export default Em.Route.extend({
         pos     = stories.indexOf(story),
         next    = stories.objectAt(pos+1);
 
-    if (next) {
-      this.replaceWith('documents.read.intro', next);
-    } else {
-      this.replaceWith('documents.read.intro', stories.get('firstObject.id'))
-    }
+    this.replaceWith('documents.read.intro',
+                     next || stories.get('firstObject.id'));
   }
 });
