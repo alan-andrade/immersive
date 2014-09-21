@@ -11,30 +11,11 @@ export default Ember.Route.extend({
 
   actions: {
     nextChunk: function () {
-      var story = this.modelFor('documents.read'),
-          chunk = this.modelFor('documents.read.chunk'),
-          chunks = story.get('chunks'),
-          position = chunks.indexOf(chunk),
-          nextChunk;
-
-      if (position !== -1) {
-        nextChunk = chunks.objectAt(position+1);
-
-        if (nextChunk) {
-          this.transitionTo('documents.read.chunk', nextChunk.get('id'));
-        } else {
-          this.transitionTo('documents.read.intro', 4);
-        }
-      }
+      this.replaceWith('documents.read.chunk.next');
     },
 
     skipStory: function () {
-      var docs    = this.modelFor('documents'),
-          current = this.modelFor('documents.read'),
-          pos     = docs.indexOf(current),
-          next    = docs.objectAt(pos + 1);
-
-      this.transitionTo('documents.read.intro', next.get('id'));
+      this.replaceWith('documents.read.next');
     },
 
     readStory: function () {
