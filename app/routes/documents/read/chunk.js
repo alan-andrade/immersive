@@ -5,5 +5,6 @@ export default Ember.Route.extend({
 
   afterModel: function (model) {
     this.controllerFor('application').set('color', model.get('color'));
+    this.controllerFor('documents').set('isReading', true);
   }
 });

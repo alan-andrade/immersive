@@ -23,7 +23,9 @@ export default Ember.Route.extend({
           self  = this;
 
       story.get('chunks').then(function (chunks) {
-        self.transitionTo('documents.read.chunk', chunks.get('firstObject.id'));
+        self.transitionTo('documents.read.chunk',
+                          story.get('id'),
+                          chunks.get('firstObject.id'));
       });
     }
   }

@@ -1,6 +1,3 @@
-p
-  a click=skipStory Next Story 
-  | or 
-  a click=readStory Read
-
 %h1= title
+
+blockquote= summary

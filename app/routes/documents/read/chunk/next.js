@@ -4,18 +4,25 @@ export default Em.Route.extend({
   enter: function () {
     var story = this.modelFor('documents.read'),
         chunk = this.modelFor('documents.read.chunk'),
-        chunks = story.get('chunks'),
-        position = chunks.indexOf(chunk),
-        nextChunk;
+        router = this,
+        position, nextChunk;
 
-    if (position !== -1) {
-      nextChunk = chunks.objectAt(position+1);
-
-      if (nextChunk) {
-        this.transitionTo('documents.read.chunk', nextChunk.get('id'));
-      } else {
-        this.transitionTo('documents.read.next');
-      }
+    if (!story) {
+      return this.replaceWith('documents.read.next');
     }
+
+    story.get('chunks').then(function (chunks) {
+      position = chunks.indexOf(chunk);
+
+      if (position !== -1) {
+        nextChunk = chunks.objectAt(position+1);
+
+        if (nextChunk) {
+          router.replaceWith('documents.read.chunk', nextChunk.get('id'));
+        } else {
+          router.replaceWith('documents.read.next');
+        }
+      }
+    });
   }
 })

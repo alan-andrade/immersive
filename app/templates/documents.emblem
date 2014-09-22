@@ -1,2 +1,10 @@
-.large-12.columns
+.large-10.columns
   = outlet
+.large-2.columns
+  ul.side-nav
+    li: a click=skipStory class='item': label Next Story
+    if isReading
+      li: a click=nextChunk class='item': label Next Segment
+    else
+      li: a click=readStory class='item': label Read
+    li= link-to 'documents.write' class='item': label Write
